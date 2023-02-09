@@ -6,7 +6,9 @@ import pycbc.waveform
 from pycbc import frame
 import matplotlib.pyplot as plt
 import scipy
+import style
 
+plt.style.use(style.style1)
 
 def search_for_signal(filename):
 
