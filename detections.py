@@ -75,7 +75,7 @@ def search_for_signal(filename):
             
             plt.close()
             plt.figure()
-            plt.title(f"SNR of data from {filename}\nwith {best_mass} solar mass template")
+            plt.title("SNR of data from " + filename[7:19] +"\n(template "+ str(best_mass) + "M$_{\odot}$)\n")
             plt.plot(snr.sample_times, abs(snr))
             plt.ylabel('signal-to-noise ratio')
             plt.xlabel('time (s)')
@@ -111,21 +111,25 @@ def compare_times(file_L,file_H,file_V):
             print("Coincidence confirmed between Hanford, Livingston and Virgo")
             print("The SNR of Hanford is : ", snr_ligo_H, "\nThe SNR of Livingston is : ", snr_ligo_L, "\nLe SNR de Virgo is :", snr_virgo)
             print("The mass found by Hanford is : ", mass_H, "\nThe mass found by Livingston is : ", mass_L, "\nThe mass found by Virgo is : ", mass_V)
+            print("The arriving time mesured by Hanford is : ", time_H, "\nThe arriving time mesured by Livingston is : ", time_L, "\nThe arriving time mesured by Virgo is : ", time_V)
         
         else :
             print("Coincidence only confirmed between Hanford and Livinstone")
             print("The SNR of Hanford is : ", snr_ligo_H, "\nThe SNR of Livingston is : ", snr_ligo_L)
             print("The mass found by Hanford is : ", mass_H, "\nThe mass found by Livingston is : ", mass_L)
+            print("The arriving time mesured by Hanford is : ", time_H, "\nThe arriving time mesured by Livingston is : ", time_L)
     else:
         if t_HV < tc_HV:
             print("Coincidence only confirmed between Hanford and Virgo")
             print("The SNR of Hanford is : ", snr_ligo_H, "\nThe SNR of Livingston is : ", snr_virgo)
             print("The mass found by Hanford is : ", mass_H, "\nThe mass found by Virgo is : ", mass_V)
+            print("The arriving time mesured by Hanford is : ", time_H, "\nThe arriving time mesured by Virgo is : ", time_V)
         
         else:
             print("NO coincidence confirmed there is no signal")
             print("The SNR of Hanford is : ", snr_ligo_H, "\nThe SNR of Livingston is : ", snr_ligo_L, "\nLe SNR de Virgo is :", snr_virgo)
             print("The mass found by Hanford is : ", mass_H, "\nThe mass found by Livingston is : ", mass_L, "\nThe mass found by Virgo is : ", mass_V)
+            print("The arriving time mesured by Hanford is : ", time_H, "\nThe arriving time mesured by Livingston is : ", time_L, "\nThe arriving time mesured by Virgo is : ", time_V)
         
         
         
