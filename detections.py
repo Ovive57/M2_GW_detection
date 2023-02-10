@@ -79,7 +79,18 @@ def search_for_signal(filename):
             plt.plot(snr.sample_times, abs(snr))
             plt.ylabel('signal-to-noise ratio')
             plt.xlabel('time (s)')
-            plt.savefig('./plots/'+filename[filename.find('1_')-1:-4]+'.pdf')
+            plt.savefig('./plots/'+filename[filename.find('1_')-1:-4]+'.png')
+            plt.close()
+            
+            
+            plt.figure()
+            plt.title('Histogram of SNR distribution for '+ filename[7:19] +"\n(template "+ str(best_mass) + "M$_{\odot}$)\n")
+            plt.hist(abs(snr), 100)
+            plt.ylabel('number of counts')
+            plt.xlabel('Signal-to-noise ratio')
+            plt.savefig('./plots/distribution_'+filename[filename.find('1_')-1:-4]+'.png')
+            plt.close()
+   
    
     return best_snr, best_time, best_mass
 
